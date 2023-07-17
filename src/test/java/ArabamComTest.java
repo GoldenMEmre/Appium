@@ -43,7 +43,7 @@ public class ArabamComTest {
 
     @Test
     public void arabamTest(){
-
+//Burada driver.activateApp(); yapmamıza gerek yok. Çünkü yukarıda @Before test de bunu 38 ve 39. satırlar ile yaptık.
         // Uygulamanin basarili bir sekilde yuklendigi dogrulanir
         Assert.assertTrue(driver.isAppInstalled("com.dogan.arabam"));
         // Uygulamanin basarili bir sekilde acildigi dogrulanir
