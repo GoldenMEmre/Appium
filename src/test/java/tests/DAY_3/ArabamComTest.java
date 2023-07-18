@@ -61,13 +61,13 @@ public class ArabamComTest {
         // Aracimin fiyatini merak ediyorum bolumunetiklayalim
         driver.findElementByXPath("//*[@text='Aracımın fiyatını merak ediyorum']").click();
         // Wolkswagen markasini secelim
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         TouchAction touchAction=new TouchAction<>(driver);
         touchAction
                 .press(PointOption.point(531,1689)).
-                 waitAction(WaitOptions.waitOptions(Duration.ofMillis(400)))
-                .moveTo(PointOption.point(531,400)).release().perform();
-        Thread.sleep(2000);
+                 waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+                .moveTo(PointOption.point(531,500)).release().perform();
+        Thread.sleep(3000);
 
         driver.findElementByXPath("//*[@text='Volkswagen']").click();
 
@@ -118,7 +118,7 @@ public class ArabamComTest {
 
         Assert.assertTrue(Integer.parseInt(aracinFiyati)>500000);
         // uygulamayi kapatalim
-        driver.closeApp();
+        //driver.closeApp();
     }
 
 }
