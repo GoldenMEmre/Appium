@@ -52,7 +52,7 @@ public class KiwiCom {
         kiwi.koordinatTiklama(1016,135,1000);
         // kalkis yapilacak ulke/sehir girilir ve sec e tiklanir
         if (driver.isKeyboardShown()){
-            driver.getKeyboard().pressKey("Kayseri");
+            driver.getKeyboard().pressKey("Istanbul");
         } else {
             kiwi.departureBox.sendKeys("Atina");
         }
@@ -72,10 +72,27 @@ public class KiwiCom {
         kiwi.koordinatTiklama(493,294,1000);
 
         kiwi.chooseButton.click();
-        // gidis tarihi mayis ayinin 21 i olarak secilir ve set date e tiklanir
+        //474,1046
+        // gidis tarihi agustos ayinin 21 i olarak secilir ve set date e tiklanir
+        kiwi.koordinatTiklama(474,1046,2000);
+
+        kiwi.ekranAltKaydirma(490,1349,850,508,202,2000);
+
+        kiwi.koordinatTiklama(262,899,2000);
+        kiwi.saveButton.click();
+        Thread.sleep(2000);
         // search butonuna tiklanir
+        kiwi.koordinatTiklama(535,1193,1000);
         // en  ucuz ve aktarmasiz filtrelemeleri yapilir
+        kiwi.koordinatTiklama(272,254,1000);
+        kiwi.koordinatTiklama(538,584,1000);
+        kiwi.koordinatTiklama(529,237,1000);
+        kiwi.koordinatTiklama(521,1448,1000);
+        Thread.sleep(1000);
         // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        String kiwifiyat=kiwi.fiyat.getText();
+        String phoneNumber="5555555555";
+        driver.sendSMS(phoneNumber,kiwifiyat);
     }
 
 }
